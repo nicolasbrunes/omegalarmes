@@ -1,0 +1,879 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <meta name="description" content="Solicite agora um orçamento gratuito de alarme residencial e proteja sua casa com a líder em segurança." />
+  <title>Alarme Residencial - Proteja sua Casa | Segurança 24h</title>
+  <link href="https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" />
+
+  <style>
+    html {
+      scroll-behavior: smooth;
+    }
+
+    body {
+      font-family: 'Roboto', sans-serif;
+      margin: 0;
+      background-color: #FFFFFF;
+      color: #333;
+    }
+
+    header {
+      background-color: #B22222;
+      color: #fff;
+      padding: 1rem;
+      text-align: center;
+      border-bottom: 1px solid #8B0000;
+    }
+
+    header h1 img {
+      max-width: 100%;
+      height: auto;
+    }
+
+    header p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      color: #fff;
+    }
+
+    .hero {
+      display: flex;
+      flex-wrap: wrap;
+      align-items: center;
+      justify-content: center;
+      padding: 2rem 1rem;
+      background: #FFFFFF;
+    }
+
+    .hero img {
+      max-width: 400px;
+      width: 100%;
+      border-radius: 10px;
+      margin: 1rem;
+    }
+
+    .hero-text {
+      max-width: 500px;
+      padding: 1rem;
+    }
+
+    .hero-text h1 {
+      color: #B22222;
+      font-size: 2rem;
+    }
+
+    .hero-text p {
+      margin: 1rem 0;
+      font-size: 1rem;
+    }
+
+    .hero-text ul {
+      padding-left: 1.2rem;
+    }
+
+    .hero-text li {
+      margin-bottom: 0.5rem;
+    }
+
+    .products {
+      padding: 2rem 1rem;
+      background-color: #FFFFFF;
+    }
+
+    .products h2 {
+      text-align: center;
+      color: #B22222;
+      margin-bottom: 2rem;
+    }
+
+    .products h2 a {
+      text-decoration: none;
+      color: inherit;
+    }
+
+    .products-grid {
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 2rem;
+    }
+
+    .product-card {
+      background: #FFFFFF;
+      border-radius: 10px;
+      padding: 1rem;
+      max-width: 250px;
+      text-align: center;
+      box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+    }
+
+    .product-card img {
+      width: 100px;
+      height: auto;
+      margin-bottom: 1rem;
+    }
+
+    /* Toggle Section */
+    
+    .products-toggle {
+      padding: 2rem 1rem;
+      background-color: #FFFFFF;
+      text-align: center;
+    }
+
+    .products-toggle h2 {
+      color: #B22222;
+      margin-bottom: 1.5rem;
+    }
+
+    .toggle-buttons {
+      margin-bottom: 1rem;
+      display: flex;
+      justify-content: center;
+      gap: 1rem;
+      flex-wrap: wrap;
+    }
+
+    .toggle-buttons button {
+      padding: 0.75rem 1.5rem;
+      background-color: #B22222;
+      color: white;
+      border: none;
+      border-radius: 5px;
+      font-weight: bold;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.3s ease;
+      display: flex;
+      align-items: center;
+    }
+
+    .toggle-buttons button:hover {
+      background-color: #801A46;
+      transform: scale(1.05);
+    }
+
+    .toggle-buttons button.active {
+      background-color: #6A153A;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+    }
+
+    .toggle-buttons button i {
+      margin-right: 0.5rem;
+      transition: transform 0.3s ease;
+    }
+
+    .toggle-buttons button.active i {
+      transform: rotate(180deg);
+    }
+
+    .toggle-content {
+      overflow: hidden;
+      max-height: 0;
+      opacity: 0;
+      transition: max-height 0.5s ease, opacity 0.5s ease;
+      padding: 0 1rem;
+      margin-top: 0.5rem;
+      background: #FFFFFF;
+      border-radius: 8px;
+      box-shadow: none;
+    }
+
+    .toggle-content.open {
+  position: relative;
+  z-index: 9999;
+  max-height: 500px; /* ou outro valor grande */
+  opacity: 1;
+  overflow: visible;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+
+    .toggle-content h3 {
+      margin-top: 1rem;
+      color: #B22222;
+      transition: color 0.3s ease;
+    }
+
+    .toggle-content.open h3 {
+      color: #801A46;
+    }
+
+    .toggle-content p {
+      margin-bottom: 1rem;
+      color: #444;
+    }
+
+    /* Form Section Melhorada */
+    .form-section {
+  background-color: #fafafa;
+  padding: 3rem 2rem;
+  max-width: 600px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(250, 250, 250, 0.15);
+  transition: box-shadow 0.3s ease;
+  position: relative;  /* adicionado */
+  z-index: 5;          /* adicionado */
+}
+
+.form-section:hover {
+  box-shadow: 0 10px 25px rgba(178, 34, 34, 0.3);
+}
+
+.form-section h2 {
+  color: #B22222;
+  margin-bottom: 2rem;
+  text-align: center;
+  font-weight: 700;
+  font-size: 1.8rem;
+  letter-spacing: 1px;
+  text-transform: uppercase;
+}
+
+form {
+  display: flex;
+  flex-direction: column;
+  gap: 1.5rem;
+}
+
+label {
+  font-weight: 600;
+  color: #333;
+  margin-bottom: 0.3rem;
+  user-select: none;
+}
+
+input,
+textarea {
+  padding: 0.85rem 1rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-family: 'Roboto', sans-serif;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  outline-offset: 2px;
+}
+
+input::placeholder,
+textarea::placeholder {
+  color: #bbb;
+  font-style: italic;
+}
+
+input:focus,
+textarea:focus {
+  border-color: #B22222;
+  box-shadow: 0 0 8px rgba(178, 34, 34, 0.4);
+  outline: none;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+button[type="submit"] {
+  background-color: #B22222;
+  color: white;
+  border: none;
+  padding: 1rem;
+  border-radius: 10px;
+  font-weight: 700;
+  font-size: 1.15rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 12px rgba(178, 34, 34, 0.4);
+}
+
+button[type="submit"]:hover {
+  background-color: #801A46;
+  transform: scale(1.05);
+  box-shadow: 0 8px 20px rgba(128, 26, 70, 0.6);
+}
+
+footer {
+  background: #333;
+  color: #FFFFFF;
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.875rem;
+}
+
+.floating-buttons {
+  position: fixed;
+  bottom: 20px;
+  right: 20px;
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  z-index: 1000;
+}
+
+.floating-buttons a {
+  background-color: #25D366;
+  color: white;
+  width: 60px;
+  height: 60px;
+  border-radius: 50%;
+  text-decoration: none;
+  font-size: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  animation: pulse 2s infinite;
+  transition: transform 0.3s ease;
+}
+
+.floating-buttons a.instagram {
+  background-color: #E1306C;
+}
+
+.floating-buttons a:hover {
+  transform: scale(1.2);
+}
+
+/* Modificação para toggle content */
+.toggle-content.open {
+  opacity: 1;
+  max-height: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  position: relative; /* adicionado */
+  z-index: 10;        /* adicionado */
+}
+
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2);
+      }
+
+      70% {
+        transform: scale(1.1);
+        box-shadow: 0 0 10px 5px rgba(0, 0, 0, 0.1);
+      }
+
+      100% {
+        transform: scale(1);
+        box-shadow: 0 0 0 0 rgba(0, 0, 0, 0);
+      }
+    }
+
+    @media (max-width: 768px) {
+      .hero {
+        flex-direction: column;
+        text-align: center;
+      }
+
+      .hero-text h1 {
+        font-size: 1.5rem;
+      }
+
+      .products-grid {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .product-card {
+        max-width: 90%;
+      }
+
+      header p {
+        font-size: 1rem;
+      }
+
+      .form-section {
+        padding: 2rem 1rem;
+        margin: 2rem 1rem;
+      }
+    }
+    .form-container {
+  background-color: #fafafa;
+  padding: 2rem 1.5rem;
+  max-width: 450px;
+  margin: 3rem auto;
+  border-radius: 12px;
+  box-shadow: 0 6px 18px rgba(178, 34, 34, 0.15);
+}
+
+.form-container h2 {
+  color: #B22222;
+  margin-bottom: 1.5rem;
+  text-align: center;
+  font-size: 1.5rem;
+  font-weight: bold;
+}
+
+.form-container form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+.form-container input,
+.form-container select {
+  padding: 0.7rem 0.9rem;
+  border: 2px solid #ddd;
+  border-radius: 8px;
+  font-size: 0.95rem;
+  transition: border-color 0.3s ease, box-shadow 0.3s ease;
+  font-family: 'Roboto', sans-serif;
+}
+
+.form-container input:focus,
+.form-container select:focus {
+  border-color: #B22222;
+  box-shadow: 0 0 6px rgba(178, 34, 34, 0.3);
+  outline: none;
+}
+
+.form-container button {
+  background-color: #B22222;
+  color: #fff;
+  border: none;
+  padding: 0.9rem;
+  border-radius: 10px;
+  font-weight: bold;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  box-shadow: 0 5px 10px rgba(178, 34, 34, 0.4);
+}
+
+.form-container button:hover {
+  background-color: #801A46;
+  transform: scale(1.05);
+}
+.product-list {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2rem;
+  justify-content: center;
+  margin-top: 1.5rem;
+}
+
+.product-card {
+  background-color: #fff;
+  border-radius: 10px;
+  padding: 1rem;
+  max-width: 200px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.08);
+  text-align: center;
+  transition: transform 0.3s;
+}
+
+.product-card:hover {
+  transform: translateY(-5px);
+}
+
+.product-card img {
+  width: 100%;
+  height: auto;
+  border-radius: 8px;
+  margin-bottom: 1rem;
+}
+
+.product-card h4 {
+  margin: 0.5rem 0;
+  font-size: 1rem;
+  color: #B22222;
+}
+
+.product-card button {
+  padding: 0.5rem 1rem;
+  background-color: #B22222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  transition: background 0.3s;
+}
+
+.product-card button:hover {
+  background-color: #801A46;
+}
+  .product-card img {
+    width: 200px;
+    height: 200px;
+    object-fit: cover;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+
+  .product-card {
+    text-align: center;
+    padding: 15px;
+    box-shadow: 0 0 10px rgba(0,0,0,0.1);
+    border-radius: 10px;
+    background: #fff;
+  }
+
+  .product-card button {
+    background-color: #25D366;
+    color: white;
+    border: none;
+    padding: 10px 15px;
+    margin-top: 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    font-weight: bold;
+  }
+
+  .product-card button:hover {
+    background-color: #128C7E;
+  }
+
+  .product-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+  }
+  .products-grid img,
+.toggle-content .product-list img {
+  width: 150px;       /* largura fixa */
+  height: auto;       /* altura proporcional */
+  object-fit: contain; /* mantém a imagem inteira sem cortar */
+  display: block;
+  margin: 0 auto 1rem auto; /* centraliza horizontalmente e dá espaço abaixo */
+}
+
+/* Mantém o resto do seu CSS já enviado, por exemplo: */
+
+.products-toggle {
+  padding: 2rem 1rem;
+  background-color: #FFFFFF;
+  text-align: center;
+}
+
+.products-toggle h2 {
+  color: #B22222;
+  margin-bottom: 1.5rem;
+}
+
+.toggle-buttons {
+  margin-bottom: 1rem;
+  display: flex;
+  justify-content: center;
+  gap: 1rem;
+  flex-wrap: wrap;
+}
+
+.toggle-buttons button {
+  padding: 0.75rem 1.5rem;
+  background-color: #B22222;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: background-color 0.3s ease, transform 0.3s ease;
+  display: flex;
+  align-items: center;
+}
+
+.toggle-buttons button:hover {
+  background-color: #801A46;
+  transform: scale(1.05);
+}
+
+.toggle-buttons button.active {
+  background-color: #6A153A;
+  box-shadow: 0 0 8px rgba(0, 0, 0, 0.2);
+}
+
+.toggle-buttons button i {
+  margin-right: 0.5rem;
+  transition: transform 0.3s ease;
+}
+
+.toggle-buttons button.active i {
+  transform: rotate(180deg);
+}
+
+.toggle-content {
+  overflow: hidden;
+  max-height: 0;
+  opacity: 0;
+  transition: max-height 0.5s ease, opacity 0.5s ease;
+  padding: 0 1rem;
+  margin-top: 0.5rem;
+  background: #FFFFFF;
+  border-radius: 8px;
+  box-shadow: none;
+}
+
+.toggle-content.open {
+  opacity: 1;
+  max-height: 500px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+}
+
+.toggle-content h3 {
+  margin-top: 1rem;
+  color: #B22222;
+  transition: color 0.3s ease;
+}
+
+.toggle-content.open h3 {
+  color: #801A46;
+}
+
+.toggle-content p {
+  margin-bottom: 1rem;
+  color: #444;
+}
+
+  </style>
+</head>
+
+<body>
+
+  <header>
+    <h1>
+      <img src="https://i.ibb.co/vx9223DG/e3cef7f2-4b0e-4ed2-8d35-1da16774bb4f.png" alt="Logo" width="500" height="150" />
+    </h1>
+    <p>Proteja o que realmente importa</p>
+  </header>
+
+  <section class="hero">
+    <img src="https://i.ibb.co/NgWDdS5k/depositphotos-279235728-stock-photo-white-paper-texture-background-close-1.png" alt="Marcas que trabalhamos" />
+    <div class="hero-text">
+      <h1>Instalação de câmeras, centrais de alarmes e controles de acessos</h1>
+      <p>Tenha mais tranquilidade e segurança com nossos serviços e produtos.</p>
+      <ul>
+        <li>Instalação rápida e com garantia.</li>
+        <li>Produtos de qualidade e excelência no trabalho.</li>
+        <li>Atendimento emergencial.</li>
+      </ul>
+    </div>
+  </section>
+
+  <section class="products">
+    <h2><a href="#products-toggle">Nossos Produtos</a></h2>
+    <div class="products-grid">
+      <div class="product-card">
+        <img src="https://i.ibb.co/xv7RM85/4b181328-1b5a-418e-bdab-3ee37189258c.png" alt="Câmeras de Segurança" />
+        <h3>Câmeras de Segurança</h3>
+        <p>Câmeras de alta resolução para monitoramento interno e externo.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://www.megams.com.br/impimages/4870.jpg" alt="Alarmes" />
+        <h3>Alarmes</h3>
+        <p>Alarmes modernos com monitoramento 24 horas e resposta rápida.</p>
+      </div>
+      <div class="product-card">
+        <img src="https://pontecfranca.com.br/wp-content/uploads/2018/04/idfit-Branco-e-Preto.png" alt="Controle de Acesso" />
+        <h3>Controle de Acesso</h3>
+        <p>Soluções completas para portões, catracas, fechaduras e biometria.</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="products-toggle" class="products-toggle">
+    <h2>Catálogo de Produtos</h2>
+  
+    <div class="toggle-buttons">
+      <button onclick="toggleTab('cameras')" id="btn-cameras">
+        <i class="fas fa-plus"></i> Câmeras
+      </button>
+      <button onclick="toggleTab('alarmes')" id="btn-alarmes">
+        <i class="fas fa-plus"></i> Alarmes
+      </button>
+      <button onclick="toggleTab('acesso')" id="btn-acesso">
+        <i class="fas fa-plus"></i> Controle de Acesso
+      </button>
+    </div>
+  
+    <!-- CÂMERAS -->
+    <div class="toggle-content" id="cameras">
+      <h3>Câmeras de Segurança</h3>
+      <p>Oferecemos câmeras internas e externas com visão noturna, alta definição e integração com aplicativos móveis.</p>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="https://novazul.com.br/pub/media/catalog/product/cache/c70ae39189325524823e3a7bddbfebee/1/_/1_624.png" alt="Câmera Interna">
+          <h4>CÂMERA IP EZVIZZ</h4>
+          <p>Câmera de alta qualidade e nitidez.</p>
+          <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CÂMERA%20IP%20EZVIZZ', '_blank')">Solicitar Orçamento</button>
+        </div>
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/61M7HBmFF9L.jpg" alt="Câmera Externa">
+          <h4>CÂMERA IP HIKVISION</h4>
+          <p>Câmera de alta qualidade e nitidez. </p>
+          <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CÂMERA%20IP%20HIKVISION', '_blank')">Solicitar Orçamento</button>
+        </div>
+        <div class="product-card">
+            <img src="https://salescdn.net/I43fIichKj4OWrQ_452mzhBq1Cw=/adaptive-fit-in/500x0/prod/store/13558/medias/products/camera-ip-2mp---vip-3240-z-g3-6757ecf6-0ae8-4ed0-8240-6519bbd8754d.webp" alt="Câmera Interna">
+            <h4>CÂMERA IP INTELBRAS</h4>
+            <p>Câmera de alta qualidade e nitidez.</p>
+            <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CÂMERA%20IP%20INTELBRAS', '_blank')">Solicitar Orçamento</button>
+          </div>
+          <div class="product-card">
+            <img src="https://plantec.com/arquivos/produtos/imagens_adicionais/original/FOTO_76e8723fced5aa13adeb551bc4f501cb.jpg" alt="NVR INTELBRAS">
+            <h4>NVR INTELBRAS POE</h4>
+            <p>Com 16 canais com alimentação POE para câmeras IP.</p>
+            <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20NVR%20INTELBRAS%20POE', '_blank')">Solicitar Orçamento</button>
+          </div>
+          <div class="product-card">
+            <img src="https://nissei.com/media/catalog/product/cache/24e3af3791642c18c52611620aeb2e21/h/i/hilook_dvr-104g-m1.jpg" alt="NVR INTELBRAS">
+            <h4>DVR Hilook DVR-104G-M1</h4>
+            <p>Com 4 canais para câmeras 1080p.</p>
+            <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20DVR%20Hilook%20DVR-104G-M1', '_blank')">Solicitar Orçamento</button>
+          </div>
+          <div class="product-card">
+            <img src="https://cdn.awsli.com.br/800x800/773/773829/produto/30820828/d3addfe07d.jpg" alt="NVR INTELBRAS">
+            <h4>DVR Intelbras Multi HD</h4>
+            <p>Com 4 canais para câmeras 1080p.</p>
+            <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20DVR%20Intelbras%20Multi%20HD', '_blank')">Solicitar Orçamento</button>
+          </div>
+      </div>
+    </div>
+  
+    <!-- ALARMES -->
+    <div class="toggle-content" id="alarmes">
+      <h3>Alarmes</h3>
+      <p>Alarmes com sensores individuais e de alta precisão.</p>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="https://images.tcdn.com.br/img/img_prod/701943/central_de_alarme_jfl_active_20_ultra_107495_2_20241009124911.jpg" alt="Central de Alarme">
+          <h4>ALARME JFL ACTIVE 20 ULTRA</h4>
+          <p>Central de alarmes JFL Active 20 Ultra.</p>
+          <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20ALARME%20JFL%20ACTIVE%2020%20ULTRA', '_blank')">Solicitar Orçamento</button>
+        </div>
+        <div class="product-card">
+            <img src="https://www.pauta.com.br/images/thumbs/0144733_600.png" alt="Central de Alarme">
+            <h4>CENTRAL DE ALARME MONITORAVEL ACTIVE-32 DUO</h4>
+            <p>Central de alarmes JFL Active 32 DUO sem teclado.</p>
+            <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20CENTRAL%20DE%20ALARME%20MONITORÁVEL%20ACTIVE-32%20DUO', '_blank')">Solicitar Orçamento</button>
+          </div>
+        <div class="product-card">
+          <img src="https://m.media-amazon.com/images/I/51nzzzOVXGL.jpg" alt="Sensor de Presença">
+          <h4>Active-100 Bus</h4>
+          <p>Central de alarme monitorável para até 99 zonas com tecnologia Bus.</p>
+          <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20ALARME%20Active-100%20Bus', '_blank')">Solicitar Orçamento</button>
+        </div>
+        <div class="product-card">
+            <img src="https://images.tcdn.com.br/img/img_prod/701943/central_de_alarme_intelbras_amt_4010_smart_monitorada_106027_1_20241009124910.jpg" alt="Sensor de Presença">
+            <h4>Central de Alarme Intelbras Amt 4010 Smart Monitorada</h4>
+            <p>Central de alarme controlavel via smartphone. </p>
+            
+<button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Central%20de%20Alarme%20Intelbras%20Amt%204010%20Smart', '_blank')">Solicitar Orçamento</button>
+          </div>
+          <div class="product-card">
+            <img src="https://images.tcdn.com.br/img/img_prod/406855/central_de_alarme_intelbras_anm_24_net_controle_via_smartphone_3139_1_bbefaf4fb71212c6e5659c7f20935f66.jpg" alt="Sensor de Presença">
+            <h4>Central de Alarme Intelbras ANM 24</h4>
+            <p>Central de alarme monitorável ideal para empresas. </p>
+            <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20a%20Central%20de%20Alarme%20Intelbras%20ANM%2024', '_blank')">Solicitar Orçamento</button>
+          </div>
+      </div>
+    </div>
+  
+<!-- CONTROLE DE ACESSO -->
+<div class="toggle-content" id="acesso">
+    <h3>Controle de Acesso</h3>
+    <p>Disponibilizamos soluções inteligentes para controlar portões, catracas e acessos por biometria e cartões RFID.</p>
+    <div class="product-list">
+      <div class="product-card">
+        <img src="https://www.sollustecnologia.com/wp-content/uploads/2022/05/Sollus-controle-de-acesso-controlid-terminal-reconhecimento-facial-faceid-02.png" alt="Fechadura Digital">
+        <h4>Controle de Acesso iDFace</h4>
+        <p>Capaz de armazenar até 10.000 faces. </p>
+        <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Controle%20de%20Acesso%20iDFace', '_blank')">Solicitar Orçamento</button>
+      </div>
+      <div class="product-list">
+        <div class="product-card">
+          <img src="https://www.sollustecnologia.com/wp-content/uploads/2024/09/Sollus-controle-de-acesso-leitor-facial-controlid-idface-max-01-1.png" alt="Fechadura Digital">
+          <h4>Controle de Acesso iDFace Max</h4>
+          <p>Seu algoritmo avançado e câmeras de alta qualidade permitem a identificação de até 100.000 faces. </p>
+          <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Controle%20de%20Acesso%20iDFace%20Max', '_blank')">Solicitar Orçamento</button>
+        </div>
+        <div class="product-list">
+            <div class="product-card">
+              <img src="https://backend.intelbras.com/sites/default/files/integration/digiprox_sa_203_mf_persp_esq.png" alt="Fechadura Digital">
+              <h4>Controlador de acesso 13,56MHz</h4>
+              <p>O Digiprox SA 203 MF é stand alone. </p>
+              <button onclick="window.open('https://wa.me/554830252222?text=Olá,%20gostaria%20de%20saber%20mais%20sobre%20o%20Controlador%20de%20acesso%2013,56MHz%20Digiprox%20SA%20203%20MF', '_blank')">Solicitar Orçamento
+              </button>
+            </div>
+        </div>
+      </div>
+    </div> <!-- fecha todas as divs de produto -->
+
+</section> <!-- <- fechamento do #products-toggle -->
+
+<!-- Formulário Melhorado - agora fora da aba de produtos -->
+<section class="form-container" id="contato">
+  <h2>Solicite um Orçamento Gratuito</h2>
+  <form>
+    <input type="text" placeholder="Nome completo" required>
+    <input type="tel" placeholder="Telefone" required>
+    <input type="email" placeholder="E-mail" required>
+    <select required>
+      <option value="">Tipo de imóvel</option>
+      <option value="residencial">Residencial</option>
+      <option value="comercial">Comercial</option>
+    </select>
+    <button type="submit">Solicitar Orçamento</button>
+  </form>
+</section>
+
+<footer>
+  <p>© 2025 Alarme Residencial. Todos os direitos reservados.</p>
+</footer>
+
+<div class="floating-buttons">
+  <a href="https://wa.me/554830252222?text=Ol%C3%A1%2C%20gostaria%20de%20saber%20mais%20sobre%20seus%20servi%C3%A7os." target="_blank" aria-label="WhatsApp">
+    <i class="fab fa-whatsapp"></i>
+  </a>
+  <a href="https://www.instagram.com/omegaalarmes/" target="_blank" class="instagram" aria-label="Instagram">
+    <i class="fab fa-instagram"></i>
+  </a>
+</div>
+
+<script>
+    function toggleTab(tabId) {
+      const allContents = document.querySelectorAll('.toggle-content');
+      const allButtons = document.querySelectorAll('.toggle-buttons button');
+  
+      allContents.forEach(content => {
+        if (content.id === tabId) {
+          const isOpen = content.classList.contains('open');
+          if (isOpen) {
+            content.classList.remove('open');
+          } else {
+            content.classList.add('open');
+          }
+        } else {
+          content.classList.remove('open');
+        }
+      });
+  
+      allButtons.forEach(button => {
+        const icon = button.querySelector('i');
+        if (button.id === 'btn-' + tabId) {
+          button.classList.toggle('active');
+          if (button.classList.contains('active')) {
+            icon.classList.remove('fa-plus');
+            icon.classList.add('fa-minus');
+          } else {
+            icon.classList.remove('fa-minus');
+            icon.classList.add('fa-plus');
+          }
+        } else {
+          button.classList.remove('active');
+          const otherIcon = button.querySelector('i');
+          if (otherIcon) {
+            otherIcon.classList.remove('fa-minus');
+            otherIcon.classList.add('fa-plus');
+          }
+        }
+      });
+    }
+  </script>
+  
+</body>
+</html>
